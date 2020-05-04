@@ -1,12 +1,15 @@
 import React from 'react';
+import Smurfs from "./Smurfs";
 import { connect } from 'react-redux';
 
-const SmurfsList = () => {
+const SmurfsList = (props) => {
 
 
     return (
         <div>
-
+            {props.smurfs.map(smurf => {
+                return <Smurfs smurf={smurf} key={smurf.id} />
+            })}
         </div>
     )
 };

@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getSmurf } from "..\store\action\index";
 import Smurfs from "./Smurfs";
 import { connect } from 'react-redux';
 
-const SmurfsList = (props) => {
+const SmurfsList = (props, getSmurf, isFetching, error) => {
 
+    useEffect (() => {
+        props.getSmurf();
+    }, [getSmurf]);
+
+    if (isFetching) {
+        return <h2>Fetching Smurfs</h2>
+    }
+
+    if (error) {
+        return <h2>{error}</h2>
+    }
 
     return (
         <div>
@@ -16,8 +28,10 @@ const SmurfsList = (props) => {
 
 const mapStateToProps = state => {
     return {
-        
+        smurfs: state.smurfs,
+        isFetching: state.isFetching,
+        error: state.error
     };
 };
 
-export default connect (mapStateToProps, {}) (SmurfsList);
+export default connect (mapStateToProps, {getSmurf}) (SmurfsList);

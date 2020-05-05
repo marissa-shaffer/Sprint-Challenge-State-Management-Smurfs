@@ -6,7 +6,7 @@ const SmurfsForm = () => {
 
     const handleChange = e => {
         e.preventDefault();
-        setInput({...InputDeviceInfo, [e.target.name]: e.target.value});
+        setInput({...input, [e.target.name]: e.target.value});
     }
 
     const handleSubmit = e => {

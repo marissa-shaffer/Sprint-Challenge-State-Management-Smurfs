@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import SmurfsList from "./component/SmurfsList";
-import SmufsForm from "./component/SmurfsForm";
+import SmurfsForm from "./component/SmurfsForm";
 
 
 class App extends Component {

@@ -46,8 +46,10 @@ const SmurfsForm = () => {
 
 const mapStateToProps = state => {
     return {
-
+        smurfs: state.smurfs,
+        isFetching: state.isFetching,
+        error: state.error
     }
 }
 
-export default connect(mapStateToProps, {})(SmurfsForm);
+export default connect(mapStateToProps, {addSmurf})(SmurfsForm);

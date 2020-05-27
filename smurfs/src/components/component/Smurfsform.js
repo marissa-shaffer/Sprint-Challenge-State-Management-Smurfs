@@ -1,8 +1,12 @@
 import React, {useState} from "react";
+import { addSmurf } from "../store/action/index";
 import { connect } from "react-redux";
 import { Form } from "react-bootstrap";
 
-const SmurfsForm = () => {
+const SmurfsForm = ({addSmurf}) => {
+
+    const inputState = {name: "", age: "", height: ""};
+    const [input, setInput] = useState(inputState);
 
     const handleChange = e => {
         e.preventDefault();

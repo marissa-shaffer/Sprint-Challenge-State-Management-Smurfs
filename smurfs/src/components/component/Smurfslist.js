@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { getSmurf } from "..\store\action\index";
+import { getSmurf } from "../store/action/index";
 import Smurfs from "./Smurfs";
 import { connect } from 'react-redux';
 
 const SmurfsList = (props, getSmurf, isFetching, error) => {
 
-    useEffect (() => {
+    useEffect(() => {
         props.getSmurf();
     }, [getSmurf]);
 
